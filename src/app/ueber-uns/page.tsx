@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AUDIENCES } from "@/data/audiences";
 
 export const metadata: Metadata = {
   title: "Über uns",
@@ -60,24 +61,7 @@ export default function UeberUns() {
           jeden zugänglich sein soll:
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {[
-            {
-              title: "Einsteiger:innen & Neugierige",
-              text: "Menschen, die noch nie mit Ton gearbeitet haben und in entspannter Atmosphäre erste Erfahrungen sammeln möchten.",
-            },
-            {
-              title: "Kinder, Jugendliche & Familien",
-              text: "Ferien- und Wochenendangebote, die spielerisch an kreatives Gestalten heranführen.",
-            },
-            {
-              title: "Ältere Menschen",
-              text: "Offene Treffs, die Begegnung, Feinmotorik und Freude am gemeinsamen Tun fördern.",
-            },
-            {
-              title: "Menschen in besonderen Lebenslagen",
-              text: "Kreatives Gestalten als niedrigschwelliger Zugang zu Gemeinschaft, etwa für Menschen mit Fluchterfahrung, Isolation oder Belastung.",
-            },
-          ].map((item, i) => (
+          {AUDIENCES.map((item, i) => (
             <div
               key={item.title}
               className={`${

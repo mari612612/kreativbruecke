@@ -3,14 +3,9 @@ import Link from "next/link";
 import HomeContactFlow from "@/components/HomeContactFlow";
 import Reveal from "@/components/Reveal";
 import RotatingWord from "@/components/RotatingWord";
+import { AUDIENCES } from "@/data/audiences";
 
-const AUDIENCE_WORDS = [
-  "Neugierige",
-  "Familien",
-  "Kinder",
-  "Ehrenamtliche",
-  "Jede und Jeden",
-];
+const AUDIENCE_WORDS = AUDIENCES.map((a) => a.short);
 
 export default function Home() {
   return (
@@ -60,6 +55,38 @@ export default function Home() {
             style={{ animationDelay: "340ms" }}
           >
             <HomeContactFlow />
+          </div>
+        </div>
+      </section>
+
+      {/* Für wen wir da sind */}
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <h2 className="font-serif-display text-3xl font-semibold text-navy sm:text-4xl">
+              Für wen wir da sind
+            </h2>
+            <p className="mt-3 max-w-2xl text-navy/75">
+              Unsere Angebote richten sich an ein breites Publikum – bewusst
+              ohne enge Zielgruppendefinition, weil Kreativität für jede und
+              jeden zugänglich sein soll.
+            </p>
+          </Reveal>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {AUDIENCES.map((item, i) => (
+              <Reveal key={item.title} delay={i * 100}>
+                <div
+                  className={`h-full ${
+                    i % 2 === 0 ? "rounded-ceramic" : "rounded-ceramic-alt"
+                  } bg-white/60 p-5 ring-1 ring-navy/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
+                >
+                  <h3 className="font-semibold text-navy">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-navy/75">
+                    {item.text}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
