@@ -62,12 +62,14 @@ export default function Projekte() {
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((project) => (
+          {PROJECTS.map((project, i) => (
             <article
               key={project.title}
-              className="flex flex-col rounded-2xl bg-white/60 p-6 ring-1 ring-navy/5 transition-shadow hover:shadow-md"
+              className={`flex flex-col ${
+                i % 2 === 0 ? "rounded-ceramic" : "rounded-ceramic-alt"
+              } bg-white/60 p-6 ring-1 ring-navy/5 transition-shadow hover:shadow-md`}
             >
-              <span className="inline-block w-fit rounded-full bg-sky/60 px-3 py-1 text-xs font-semibold text-navy">
+              <span className="inline-block w-fit rounded-md bg-sky/60 px-3 py-1 text-xs font-semibold text-navy">
                 {project.tag}
               </span>
               <h2 className="mt-4 font-serif-display text-lg font-semibold text-navy">
@@ -80,7 +82,7 @@ export default function Projekte() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-2xl bg-navy p-8 text-center text-cream sm:p-10">
+        <div className="mt-14 rounded-ceramic bg-navy p-8 text-center text-cream sm:p-10">
           <p className="font-serif-display text-2xl font-semibold">
             Du hast eine Projektidee?
           </p>

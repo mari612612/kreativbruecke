@@ -77,10 +77,12 @@ export default function UeberUns() {
               title: "Menschen in besonderen Lebenslagen",
               text: "Kreatives Gestalten als niedrigschwelliger Zugang zu Gemeinschaft, etwa für Menschen mit Fluchterfahrung, Isolation oder Belastung.",
             },
-          ].map((item) => (
+          ].map((item, i) => (
             <div
               key={item.title}
-              className="rounded-2xl bg-white/60 p-6 ring-1 ring-navy/5"
+              className={`${
+                i % 2 === 0 ? "rounded-ceramic" : "rounded-ceramic-alt"
+              } bg-white/60 p-6 ring-1 ring-navy/5`}
             >
               <h3 className="font-semibold text-navy">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-navy/75">
@@ -113,7 +115,7 @@ export default function UeberUns() {
           </li>
         </ul>
 
-        <div className="mt-12 rounded-2xl bg-navy p-8 text-cream">
+        <div className="mt-12 rounded-ceramic bg-navy p-8 text-cream">
           <p className="font-serif-display text-xl font-semibold">
             Möchtest du Teil von Kreativbrücke e.V. werden?
           </p>

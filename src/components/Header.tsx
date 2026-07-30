@@ -18,19 +18,19 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-sky/90 backdrop-blur supports-[backdrop-filter]:bg-sky/80 border-b border-navy/10">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
         <Link
           href="/"
           className="flex items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/2.png"
+            src="/logo-header.png"
             alt="Kreativbrücke e.V."
-            width={2000}
-            height={500}
+            width={1935}
+            height={289}
             priority
-            className="h-8 w-auto sm:h-9"
+            className="h-10 w-auto sm:h-12"
           />
         </Link>
 
@@ -43,7 +43,7 @@ export default function Header() {
                 href={link.href}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   active
-                    ? "bg-navy text-cream"
+                    ? "bg-sky-dark text-navy"
                     : "text-navy/80 hover:bg-white/60 hover:text-navy"
                 }`}
               >
@@ -51,12 +51,12 @@ export default function Header() {
               </Link>
             );
           })}
-          <Link
-            href="/kontakt"
+          <button
+            type="button"
             className="ml-2 rounded-full bg-clay px-5 py-2 text-sm font-semibold text-cream transition-colors hover:bg-clay-dark"
           >
-            Mitmachen
-          </Link>
+            Spenden
+          </button>
         </nav>
 
         <button
@@ -96,7 +96,7 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   className={`block rounded-xl px-4 py-3 text-base font-medium ${
                     pathname === link.href
-                      ? "bg-navy text-cream"
+                      ? "bg-sky-dark text-navy"
                       : "text-navy/80 hover:bg-white/60"
                   }`}
                 >
@@ -105,13 +105,12 @@ export default function Header() {
               </li>
             ))}
             <li className="pt-1">
-              <Link
-                href="/kontakt"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl bg-clay px-4 py-3 text-center font-semibold text-cream"
+              <button
+                type="button"
+                className="block w-full rounded-xl bg-clay px-4 py-3 text-center font-semibold text-cream"
               >
-                Mitmachen
-              </Link>
+                Spenden
+              </button>
             </li>
           </ul>
         </nav>

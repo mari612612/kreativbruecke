@@ -23,12 +23,12 @@ export default function Kontakt() {
       </p>
 
       <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
-        <div className="rounded-2xl bg-white/60 p-6 ring-1 ring-navy/5 sm:p-8">
+        <div className="rounded-ceramic bg-white/60 p-6 ring-1 ring-navy/5 sm:p-8">
           <ContactForm />
         </div>
 
         <div className="space-y-6">
-          <div className="rounded-2xl bg-white/60 p-6 ring-1 ring-navy/5 sm:p-8">
+          <div className="rounded-ceramic-alt bg-white/60 p-6 ring-1 ring-navy/5 sm:p-8">
             <h2 className="font-serif-display text-lg font-semibold text-navy">
               Direkt per E-Mail
             </h2>
@@ -43,7 +43,7 @@ export default function Kontakt() {
             </a>
           </div>
 
-          <div className="rounded-2xl bg-navy p-6 text-cream sm:p-8">
+          <div className="rounded-ceramic bg-navy p-6 text-cream sm:p-8">
             <h2 className="font-serif-display text-lg font-semibold">
               Werkstatt &amp; Anschrift
             </h2>
