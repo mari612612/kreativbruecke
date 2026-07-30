@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --color-navy: #001f3d;
+  --color-navy-light: #0a2f52;
+  --color-sky: #cae0f2;
+  --color-cream: #f6f4f0;
+  --color-clay: #780b0b;
+  --color-clay-dark: #5c0808;
+}
+
+@theme inline {
+  --color-navy: var(--color-navy);
+  --color-navy-light: var(--color-navy-light);
+  --color-sky: var(--color-sky);
+  --color-cream: var(--color-cream);
+  --color-clay: var(--color-clay);
+  --color-clay-dark: var(--color-clay-dark);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-geist-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-sky);
+  color: var(--color-navy);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.font-serif-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+/* Subtle ceramic-wheel texture used as a decorative background accent */
+.texture-rings {
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 58%, rgba(0, 31, 61, 0.06) 59%, rgba(0, 31, 61, 0.06) 60%, transparent 61%),
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 68%, rgba(0, 31, 61, 0.05) 69%, rgba(0, 31, 61, 0.05) 70%, transparent 71%),
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 78%, rgba(0, 31, 61, 0.04) 79%, rgba(0, 31, 61, 0.04) 80%, transparent 81%);
+}
