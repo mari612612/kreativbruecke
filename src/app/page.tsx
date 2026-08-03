@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import HomeContactFlow from "@/components/HomeContactFlow";
 import Reveal from "@/components/Reveal";
 import RotatingWord from "@/components/RotatingWord";
@@ -50,12 +49,6 @@ export default function Home() {
             Ob am Anfang oder mit Erfahrung: Bei uns ist jede und jeder
             willkommen.
           </p>
-          <div
-            className="animate-fade-up"
-            style={{ animationDelay: "340ms" }}
-          >
-            <HomeContactFlow />
-          </div>
         </div>
       </section>
 
@@ -67,12 +60,13 @@ export default function Home() {
               Für wen wir da sind
             </h2>
             <p className="mt-3 max-w-2xl text-navy/75">
-              Unsere Angebote richten sich an ein breites Publikum – bewusst
-              ohne enge Zielgruppendefinition, weil Kreativität für jede und
-              jeden zugänglich sein soll.
+              Wir ermöglichen kreative, künstlerische und gestalterische
+              Betätigung für Menschen, denen der Zugang dazu sonst aus
+              finanziellen, gesundheitlichen, sozialen oder anderen Gründen
+              nicht oder nur eingeschränkt möglich ist.
             </p>
           </Reveal>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {AUDIENCES.map((item, i) => (
               <Reveal key={item.title} delay={i * 100}>
                 <div
@@ -141,26 +135,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Band */}
-      <section className="bg-navy py-20">
-        <Reveal className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <div>
-            <h2 className="font-serif-display text-3xl font-semibold text-cream sm:text-4xl">
-              Lust, mitzugestalten?
-            </h2>
-            <p className="mt-2 max-w-lg text-cream/75">
-              Ob als Teilnehmende, Ehrenamtliche oder Fördermitglied –
-              wir freuen uns über jede und jeden, der Kreativbrücke e.V.
-              unterstützen möchte.
-            </p>
-          </div>
-          <Link
-            href="/kontakt"
-            className="shrink-0 rounded-full bg-clay px-7 py-3.5 text-base font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-clay-dark hover:shadow-lg"
-          >
-            Schreib uns
-          </Link>
-        </Reveal>
+      {/* Wie möchtest du mitwirken? */}
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <HomeContactFlow />
+          </Reveal>
+        </div>
       </section>
     </>
   );

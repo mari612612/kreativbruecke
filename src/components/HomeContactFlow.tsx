@@ -4,33 +4,39 @@ import { useState, type FormEvent } from "react";
 
 const CONTACT_EMAIL = "kontakt@kreativbruecke-ev.de";
 
-type Category = "kooperation" | "mitgliedschaft" | "sonstiges";
+type Category = "kooperation" | "finanziell" | "mitglied" | "sonstiges";
 
 const CATEGORIES: {
   id: Category;
   title: string;
-  text: string;
+  text?: string;
 }[] = [
   {
     id: "kooperation",
-    title: "Kooperation",
-    text: "Schule, Verein oder Unternehmen",
+    title: "Kooperation anfragen",
+    text: "Für Schulen, Kitas, Familienzentren, Vereine oder Unternehmen, die Kinder/Jugendliche/Senior:innen an uns vermitteln oder mit uns zusammenarbeiten möchten.",
   },
   {
-    id: "mitgliedschaft",
-    title: "Mitgliedschaft",
-    text: "Als Mitglied oder Fördermitglied dabei sein",
+    id: "finanziell",
+    title: "Finanziell unterstützen",
+    text: "Als Spende, regelmäßiger Förderbeitrag oder einmalige Zuwendung — ihr ermöglicht damit direkt geförderte Kursplätze.",
+  },
+  {
+    id: "mitglied",
+    title: "Mitglied werden",
+    text: "Werdet Teil des Vereins und gestaltet mit — ohne Mitgliedsbeitrag, mit Stimmrecht in der Mitgliederversammlung.",
   },
   {
     id: "sonstiges",
-    title: "Sonstiges",
-    text: "Andere Frage oder Anliegen",
+    title: "Sonstiges Anliegen",
+    text: "Presseanfragen, Materialspenden oder alles andere, das nicht in die Kategorien oben passt.",
   },
 ];
 
 const CATEGORY_LABEL: Record<Category, string> = {
   kooperation: "Kooperationsanfrage",
-  mitgliedschaft: "Mitgliedschaftsanfrage",
+  finanziell: "Anfrage zur finanziellen Unterstützung",
+  mitglied: "Mitgliedschaftsanfrage",
   sonstiges: "Kontaktanfrage",
 };
 
@@ -78,26 +84,33 @@ export default function HomeContactFlow() {
 
   if (!category) {
     return (
-      <div className="mt-12">
-        <p className="text-sm font-semibold uppercase tracking-wide text-navy/60">
+      <div>
+        <h2 className="font-serif-display text-3xl font-semibold text-navy sm:text-4xl">
           Wie möchtest du mitwirken?
+        </h2>
+        <p className="mt-3 max-w-2xl text-navy/75">
+          Ob als Teilnehmende, Ehrenamtliche oder Fördermitglied – wir
+          freuen uns über jede und jeden, der Kreativbrücke e.V.
+          unterstützen möchte.
         </p>
-        <div className="mt-4 flex flex-wrap gap-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {CATEGORIES.map((c, i) => (
             <button
               key={c.id}
               type="button"
               onClick={() => setCategory(c.id)}
-              className={`w-full max-w-xs flex-1 text-left ${
+              className={`flex h-full flex-col text-left ${
                 i % 2 === 0 ? "rounded-ceramic" : "rounded-ceramic-alt"
               } bg-cream p-5 shadow-sm ring-1 ring-navy/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
             >
               <span className="font-serif-display text-lg font-semibold text-navy">
                 {c.title}
               </span>
-              <span className="mt-1 block text-sm leading-relaxed text-navy/70">
-                {c.text}
-              </span>
+              {c.text && (
+                <span className="mt-1 block text-sm leading-relaxed text-navy/70">
+                  {c.text}
+                </span>
+              )}
             </button>
           ))}
         </div>
@@ -106,7 +119,7 @@ export default function HomeContactFlow() {
   }
 
   return (
-    <div className="mt-12 max-w-xl rounded-ceramic bg-white/70 p-6 ring-1 ring-navy/5 sm:p-8">
+    <div className="max-w-xl rounded-ceramic bg-white/70 p-6 ring-1 ring-navy/5 sm:p-8">
       <button
         type="button"
         onClick={reset}

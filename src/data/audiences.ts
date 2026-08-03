@@ -1,22 +1,17 @@
 export const AUDIENCES = [
   {
-    title: "Einsteiger:innen & Neugierige",
-    short: "Neugierige",
-    text: "Menschen, die noch nie mit Ton gearbeitet haben und in entspannter Atmosphäre erste Erfahrungen sammeln möchten.",
-  },
-  {
-    title: "Kinder, Jugendliche & Familien",
+    title: "Kinder, Jugendliche & Familien in einkommensschwachen Lebenslagen",
     short: "Familien",
-    text: "Ferien- und Wochenendangebote, die spielerisch an kreatives Gestalten heranführen.",
+    text: "Wir schaffen kreative Erfahrungsräume für junge Menschen, deren Familien sich entsprechende Angebote sonst nicht leisten könnten.",
   },
   {
-    title: "Ältere Menschen",
+    title: "Ältere Menschen in sozialer Isolation",
     short: "Ältere Menschen",
-    text: "Offene Treffs, die Begegnung, Feinmotorik und Freude am gemeinsamen Tun fördern.",
+    text: "Offene Treffs, die Begegnung, Feinmotorik und Freude am gemeinsamen Gestalten fördern — insbesondere für Senior:innen, die sonst wenig soziale Anbindung haben.",
   },
   {
     title: "Menschen in besonderen Lebenslagen",
     short: "Menschen in besonderen Lebenslagen",
-    text: "Kreatives Gestalten als niedrigschwelliger Zugang zu Gemeinschaft, etwa für Menschen mit Fluchterfahrung, Isolation oder Belastung.",
+    text: "Kreatives Gestalten als niedrigschwelliger Zugang zu Gemeinschaft — etwa für Menschen mit Fluchterfahrung, gesundheitlichen Einschränkungen oder in belastenden Lebensphasen.",
   },
 ] as const;
