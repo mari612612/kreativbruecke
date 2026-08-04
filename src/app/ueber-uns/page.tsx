@@ -10,21 +10,6 @@ export const metadata: Metadata = {
     "Zweck, Zielgruppe und Werte von Kreativbrücke e.V. – warum wir Menschen durch kreatives und keramisches Gestalten verbinden.",
 };
 
-const WORKING_PRINCIPLES = [
-  {
-    title: "Ehrenamt",
-    text: "Ehrenamtliches Engagement bildet das Rückgrat unserer Arbeit – getragen von Menschen, die ihre Zeit und ihr handwerkliches Wissen teilen.",
-  },
-  {
-    title: "Kooperation",
-    text: "Wir kooperieren mit lokalen Einrichtungen, Schulen und sozialen Trägern, um unsere Angebote dorthin zu bringen, wo sie gebraucht werden.",
-  },
-  {
-    title: "Transparenz",
-    text: "Transparenz und Nachhaltigkeit sind uns wichtig – von der Verwendung der Mittel bis zur Wahl unserer Materialien.",
-  },
-];
-
 export default function UeberUns() {
   return (
     <>
@@ -54,6 +39,36 @@ export default function UeberUns() {
             aus Ton – es entstehen Beziehungen, Vertrauen und neue
             Perspektiven.
           </p>
+        </div>
+      </section>
+
+      {/* Wie alles begann */}
+      <section>
+        <div className="mx-auto max-w-4xl px-5 pb-16 sm:px-8 sm:pb-20">
+          <Reveal>
+            <h2 className="font-serif-display text-2xl font-semibold text-navy sm:text-3xl">
+              Wie alles begann
+            </h2>
+            <div className="mt-4 space-y-4 text-navy/80 leading-relaxed">
+              <p>
+                Wir sind Marian und Sophia. Mit Layers haben wir bereits
+                einen Ort geschaffen, an dem Menschen zusammenkommen, um
+                gemeinsam zu gestalten. Dabei wurde uns schnell klar: Nicht
+                alle, die von diesem Zusammenkommen profitieren würden,
+                können den Weg zu uns auch tatsächlich gehen – aus
+                finanziellen, gesundheitlichen, sozialen oder anderen
+                Gründen. Genau für diese Menschen haben wir Kreativbrücke
+                e.V. ins Leben gerufen.
+              </p>
+              <p>
+                Kreativbrücke e.V. befindet sich gerade erst in der
+                Gründung – und schon jetzt sind wir nicht allein: Erste
+                Unterstützer:innen und Ehrenamtliche bringen sich mit ihrer
+                Zeit, ihrem Wissen und ihrer Energie ein und helfen uns, aus
+                der Idee einen lebendigen Verein zu machen.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -91,7 +106,7 @@ export default function UeberUns() {
 
       {/* Für wen wir da sind */}
       <section className="w-full">
-        <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
           <Reveal>
             <h2 className="font-serif-display text-2xl font-semibold text-navy sm:text-3xl">
               Für wen wir da sind
@@ -124,41 +139,10 @@ export default function UeberUns() {
 
       <WaveDivider from="var(--color-sky)" to="#ffffff" variant={1} />
 
-      {/* Wie wir arbeiten */}
+      {/* CTA */}
       <section className="w-full bg-white">
-        <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
           <Reveal>
-            <h2 className="font-serif-display text-2xl font-semibold text-navy sm:text-3xl">
-              Wie wir arbeiten
-            </h2>
-          </Reveal>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            {WORKING_PRINCIPLES.map((item, i) => (
-              <Reveal
-                key={item.title}
-                delay={i * 120}
-                className={i === 1 ? "sm:-translate-y-3" : ""}
-              >
-                <div
-                  className={`h-full ${
-                    i % 2 === 0 ? "rounded-ceramic" : "rounded-ceramic-alt"
-                  } bg-cream p-6 shadow-sm ring-1 ring-navy/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
-                >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-clay font-serif-display text-sm font-semibold text-cream">
-                    {i + 1}
-                  </span>
-                  <h3 className="mt-4 font-serif-display text-lg font-semibold text-navy">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-navy/75">
-                    {item.text}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={120} className="mt-12">
             <div className="rounded-ceramic bg-navy p-8 text-cream">
               <p className="font-serif-display text-xl font-semibold">
                 Möchtest du Teil von Kreativbrücke e.V. werden?
