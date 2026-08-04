@@ -2,9 +2,9 @@
 
 import { useState, type FormEvent } from "react";
 
-const CONTACT_EMAIL = "kontakt@kreativbruecke-ev.de";
+const CONTACT_EMAIL = "hallo@kreativbruecke.org";
 
-type Category = "kooperation" | "finanziell" | "mitglied" | "sonstiges";
+type Category = "kooperation" | "finanziell" | "sonstiges";
 
 const CATEGORIES: {
   id: Category;
@@ -22,11 +22,6 @@ const CATEGORIES: {
     text: "Als Spende, regelmäßiger Förderbeitrag oder einmalige Zuwendung — ihr ermöglicht damit direkt geförderte Kursplätze.",
   },
   {
-    id: "mitglied",
-    title: "Mitglied werden",
-    text: "Werdet Teil des Vereins und gestaltet mit — ohne Mitgliedsbeitrag, mit Stimmrecht in der Mitgliederversammlung.",
-  },
-  {
     id: "sonstiges",
     title: "Sonstiges Anliegen",
     text: "Presseanfragen, Materialspenden oder alles andere, das nicht in die Kategorien oben passt.",
@@ -36,7 +31,6 @@ const CATEGORIES: {
 const CATEGORY_LABEL: Record<Category, string> = {
   kooperation: "Kooperationsanfrage",
   finanziell: "Anfrage zur finanziellen Unterstützung",
-  mitglied: "Mitgliedschaftsanfrage",
   sonstiges: "Kontaktanfrage",
 };
 
@@ -89,7 +83,7 @@ export default function HomeContactFlow() {
           Wie möchtest du mitwirken?
         </h2>
         <p className="mt-3 max-w-2xl text-navy/75">
-          Ob als Teilnehmende, Ehrenamtliche oder Fördermitglied – wir
+          Ob als Teilnehmende, Ehrenamtliche oder Unterstützer:in – wir
           freuen uns über jede und jeden, der Kreativbrücke e.V.
           unterstützen möchte.
         </p>

@@ -36,25 +36,22 @@ export default function Kontakt() {
               Lieber ohne Formular? Schreib uns einfach direkt:
             </p>
             <a
-              href="mailto:kontakt@kreativbruecke-ev.de"
+              href="mailto:hallo@kreativbruecke.org"
               className="mt-3 inline-block break-all font-semibold text-clay hover:text-clay-dark"
             >
-              kontakt@kreativbruecke-ev.de
+              hallo@kreativbruecke.org
             </a>
           </div>
 
           <div className="rounded-ceramic bg-navy p-6 text-cream sm:p-8">
             <h2 className="font-serif-display text-lg font-semibold">
-              Werkstatt &amp; Anschrift
+              Anschrift
             </h2>
             <address className="mt-3 space-y-1 text-sm not-italic text-cream/80">
               <p>Kreativbrücke e.V.</p>
-              <p>Musterstraße 1</p>
-              <p>12345 Musterstadt</p>
+              <p>Lübecker Straße 11</p>
+              <p>50668 Köln</p>
             </address>
-            <p className="mt-4 text-xs text-cream/60">
-              Bitte trage hier eure tatsächliche Anschrift ein.
-            </p>
           </div>
         </div>
       </div>

@@ -26,15 +26,21 @@ export default function Impressum() {
           <p className="mt-2">
             Kreativbrücke e.V.
             <br />
-            [Straße und Hausnummer]
+            Lübecker Straße 11
             <br />
-            [Postleitzahl und Ort]
+            50668 Köln
           </p>
         </div>
 
         <div>
           <h2 className="font-semibold text-navy">Vertreten durch</h2>
-          <p className="mt-2">[Name des/der 1. Vorsitzenden]</p>
+          <p className="mt-2">
+            Marian Viola
+            <br />
+            Martin Kolloch
+            <br />
+            Sophia Antonia Tengelmann
+          </p>
         </div>
 
         <div>
@@ -51,14 +57,14 @@ export default function Impressum() {
         <div>
           <h2 className="font-semibold text-navy">Kontakt</h2>
           <p className="mt-2">
-            Telefon: [Telefonnummer]
+            Telefon: 0176 61327276
             <br />
             E-Mail:{" "}
             <a
-              href="mailto:kontakt@kreativbruecke-ev.de"
+              href="mailto:hallo@kreativbruecke.org"
               className="text-clay hover:text-clay-dark"
             >
-              kontakt@kreativbruecke-ev.de
+              hallo@kreativbruecke.org
             </a>
           </p>
         </div>
