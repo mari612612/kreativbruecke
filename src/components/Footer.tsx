@@ -61,10 +61,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:kontakt@kreativbruecke-ev.de"
+                  href="mailto:hallo@kreativbruecke.org"
                   className="hover:text-cream"
                 >
-                  kontakt@kreativbruecke-ev.de
+                  hallo@kreativbruecke.org
                 </a>
               </li>
             </ul>

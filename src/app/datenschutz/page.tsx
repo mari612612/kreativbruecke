@@ -27,16 +27,16 @@ export default function Datenschutz() {
             <br />
             Kreativbrücke e.V.
             <br />
-            [Straße und Hausnummer]
+            Lübecker Straße 11
             <br />
-            [Postleitzahl und Ort]
+            50668 Köln
             <br />
             E-Mail:{" "}
             <a
-              href="mailto:kontakt@kreativbruecke-ev.de"
+              href="mailto:hallo@kreativbruecke.org"
               className="text-clay hover:text-clay-dark"
             >
-              kontakt@kreativbruecke-ev.de
+              hallo@kreativbruecke.org
             </a>
           </p>
         </div>
