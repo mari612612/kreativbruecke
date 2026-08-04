@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { AUDIENCES } from "@/data/audiences";
 import Reveal from "@/components/Reveal";
 import WaveDivider from "@/components/WaveDivider";
+import HomeContactFlow from "@/components/HomeContactFlow";
 
 export const metadata: Metadata = {
   title: "Über uns",
@@ -139,25 +139,11 @@ export default function UeberUns() {
 
       <WaveDivider from="var(--color-sky)" to="#ffffff" variant={1} />
 
-      {/* CTA */}
-      <section className="w-full bg-white">
-        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+      {/* Wie möchtest du mitwirken? */}
+      <section className="w-full bg-white py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal>
-            <div className="rounded-ceramic bg-navy p-8 text-cream">
-              <p className="font-serif-display text-xl font-semibold">
-                Möchtest du Teil von Kreativbrücke e.V. werden?
-              </p>
-              <p className="mt-2 text-cream/75">
-                Als Mitglied, Ehrenamtliche:r oder Unterstützer:in – wir
-                freuen uns auf dich.
-              </p>
-              <Link
-                href="/kontakt"
-                className="mt-5 inline-block rounded-full bg-clay px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-clay-dark"
-              >
-                Kontakt aufnehmen
-              </Link>
-            </div>
+            <HomeContactFlow />
           </Reveal>
         </div>
       </section>
