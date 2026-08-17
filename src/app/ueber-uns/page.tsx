@@ -73,8 +73,34 @@ export default function UeberUns() {
                 </h2>
                 <div className="mt-4 space-y-4 text-navy/80 leading-relaxed">
                   <p>
-                    Wir sind Marian und Sophia. Mit layers haben wir bereits
-                    einen Ort geschaffen, an dem Menschen zusammenkommen, um
+                    Wir sind Marian und Sophia. Mit{" "}
+                    <a
+                      href="https://layers-studios.de"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-clay hover:text-clay-dark"
+                    >
+                      layers
+                    </a>{" "}
+                    haben wir mit unseren Studios in{" "}
+                    <a
+                      href="https://layers-studios.de/koeln"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-clay hover:text-clay-dark"
+                    >
+                      Köln
+                    </a>{" "}
+                    und{" "}
+                    <a
+                      href="https://layers-studios.de/muenster"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-clay hover:text-clay-dark"
+                    >
+                      Münster
+                    </a>{" "}
+                    bereits Orte geschaffen, an denen Menschen zusammenkommen, um
                     gemeinsam zu gestalten. Dabei wurde uns schnell klar:
                     Nicht alle, die von diesem Zusammenkommen profitieren
                     würden, können den Weg zu uns auch tatsächlich gehen –
