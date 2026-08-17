@@ -73,14 +73,41 @@ export default function UeberUns() {
                 </h2>
                 <div className="mt-4 space-y-4 text-navy/80 leading-relaxed">
                   <p>
-                    Wir sind Marian und Sophia. Mit layers haben wir bereits
-                    einen Ort geschaffen, an dem Menschen zusammenkommen, um
-                    gemeinsam zu gestalten. Dabei wurde uns schnell klar:
-                    Nicht alle, die von diesem Zusammenkommen profitieren
-                    würden, können den Weg zu uns auch tatsächlich gehen –
-                    aus finanziellen, gesundheitlichen, sozialen oder
-                    anderen Gründen. Genau für diese Menschen haben wir
-                    Kreativbrücke e.V. ins Leben gerufen.
+                    Wir sind Marian und Sophia. Mit{" "}
+                    <a
+                      href="https://layers-studios.de"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-clay underline hover:text-clay-dark"
+                    >
+                      layers
+                    </a>{" "}
+                    haben wir bereits einen Ort geschaffen, an dem Menschen
+                    zusammenkommen, um gemeinsam zu gestalten – mittlerweile
+                    an zwei Standorten in{" "}
+                    <a
+                      href="https://layers-studios.de/koeln"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-clay underline hover:text-clay-dark"
+                    >
+                      Köln
+                    </a>{" "}
+                    und{" "}
+                    <a
+                      href="https://layers-studios.de/muenster"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-clay underline hover:text-clay-dark"
+                    >
+                      Münster
+                    </a>
+                    . Dabei wurde uns schnell klar: Nicht alle, die von
+                    diesem Zusammenkommen profitieren würden, können den Weg
+                    zu uns auch tatsächlich gehen – aus finanziellen,
+                    gesundheitlichen, sozialen oder anderen Gründen. Genau
+                    für diese Menschen haben wir Kreativbrücke e.V. ins
+                    Leben gerufen.
                   </p>
                   <p>
                     Kreativbrücke e.V. befindet sich gerade erst in der
