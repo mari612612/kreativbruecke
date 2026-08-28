@@ -11,7 +11,7 @@ export const AUDIENCES = [
   },
   {
     title: "Menschen in besonderen Lebenslagen",
-    short: "Menschen in besonderen Lebenslagen",
+    short: "Menschen in Notlagen",
     text: "Kreatives Gestalten als niedrigschwelliger Zugang zu Gemeinschaft — etwa für Menschen mit Fluchterfahrung, gesundheitlichen Einschränkungen oder in belastenden Lebensphasen.",
   },
 ] as const;
