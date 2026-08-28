@@ -12,13 +12,14 @@ export default function Home() {
       {/* Hero */}
       <section className="relative min-h-[calc(100svh-4.5rem)] overflow-hidden">
         <Image
-          src="/bridge-icon-v2.png"
+          src="/2026-05-10-Layers_MS-ErsterKurs-66.jpg"
           alt=""
           aria-hidden
-          width={1384}
-          height={435}
-          className="animate-drift pointer-events-none absolute bottom-0 left-1/2 w-[150%] max-w-none opacity-[0.06] sm:w-[115%] md:w-[100%]"
+          width={361}
+          height={542}
+          className="pointer-events-none absolute bottom-0 left-1/2 w-64 -translate-x-1/2 rounded-3xl object-cover sm:bottom-auto sm:left-auto sm:right-10 sm:top-1/2 sm:w-[22rem] sm:translate-x-0 sm:-translate-y-1/2 md:w-[28rem] lg:right-16 lg:w-[32rem]"
         />
+        <div className="pointer-events-none absolute inset-0 bg-sky/85 sm:hidden" />
         <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-8 sm:pt-28">
           <p
             className="animate-fade-up inline-flex items-center gap-2 rounded-md bg-cream px-4 py-1.5 text-sm font-medium text-navy shadow-sm"
