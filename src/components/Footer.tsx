@@ -60,6 +60,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/spenden" className="hover:text-cream">
+                  Hinweise zu Spenden
+                </Link>
+              </li>
+              <li>
                 <a
                   href="mailto:hallo@kreativbruecke.org"
                   className="hover:text-cream"
