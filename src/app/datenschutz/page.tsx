@@ -140,16 +140,31 @@ export default function Datenschutz() {
           </h2>
           <p className="mt-2">
             Wenn du uns über das Kontaktformular oder per E-Mail
-            kontaktierst, werden die von dir angegebenen Daten (Name,
+            kontaktierst, werden die von dir angegebenen Daten
+            (Organisation/Einrichtung, Art der Einrichtung, Name,
             E-Mail-Adresse, Nachrichteninhalt) ausschließlich zum Zweck
             der Bearbeitung deiner Anfrage verarbeitet. Rechtsgrundlage
             hierfür ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO.
           </p>
           <p className="mt-2">
-            Unser Kontaktformular öffnet dein lokales E-Mail-Programm und
-            übermittelt deine Angaben direkt per E-Mail an uns; es werden
-            dabei keine Formulardaten auf einem Server dieser Website
-            gespeichert oder protokolliert.
+            Für den Versand der Formulardaten per E-Mail nutzen wir den
+            Dienst Resend (Plus Five Five, Inc., 2261 Market Street
+            #5039, San Francisco, CA 94114, USA). Deine Angaben werden
+            dabei als
+            E-Mail an unser Postfach übermittelt; Resend verarbeitet die
+            Daten in unserem Auftrag ausschließlich zu diesem Zweck (Art.
+            28 DSGVO) und speichert sie nicht dauerhaft. Eine Übermittlung
+            in die USA ist dabei nicht ausgeschlossen und über die
+            EU-Standardvertragsklauseln (Art. 46 DSGVO) abgesichert.
+          </p>
+          <p className="mt-2">
+            Zum Schutz vor Missbrauch und Spam speichern wir beim Absenden
+            des Formulars vorübergehend deine IP-Adresse, um die Anzahl
+            der Anfragen pro Minute zu begrenzen (Rechtsgrundlage: Art. 6
+            Abs. 1 lit. f DSGVO, berechtigtes Interesse an einem
+            funktionsfähigen, missbrauchsfreien Formular). Die IP-Adresse
+            wird dabei nur kurzzeitig im Arbeitsspeicher gehalten und
+            nicht dauerhaft gespeichert.
           </p>
         </div>
 
