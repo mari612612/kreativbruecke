@@ -48,9 +48,9 @@ export default function Impressum() {
           <p className="mt-2">
             Eintragung im Vereinsregister.
             <br />
-            Registergericht: [Amtsgericht, Ort]
+            Registergericht: Amtsgericht Köln
             <br />
-            Registernummer: [VR-Nummer]
+            Registernummer: VR 22817
           </p>
         </div>
 
