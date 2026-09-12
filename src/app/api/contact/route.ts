@@ -2,16 +2,21 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 import { isRateLimited } from "@/lib/rate-limit";
-import { ORG_TYPES } from "@/lib/contact";
 
 const CONTACT_EMAIL = "hallo@kreativbruecke.org";
 
+const CATEGORY_LABEL = {
+  kooperation: "Kooperationsanfrage",
+  finanziell: "Anfrage zur finanziellen Unterstützung",
+  sonstiges: "Kontaktanfrage",
+} as const;
+
 const contactSchema = z.object({
-  organisation: z
-    .string({ error: "Bitte gib eine Organisation/Einrichtung an." })
-    .trim()
-    .min(1, "Bitte gib eine Organisation/Einrichtung an."),
-  orgType: z.enum(ORG_TYPES, "Bitte wähle eine Art der Einrichtung aus."),
+  // Nur beim Kontaktformular (/kontakt) und bei "Kooperation anfragen"
+  // (Startseite/Über-uns) gesetzt.
+  organisation: z.string().trim().min(1).optional(),
+  orgType: z.string().trim().min(1).optional(),
+  category: z.enum(["kooperation", "finanziell", "sonstiges"]).optional(),
   name: z
     .string({ error: "Bitte gib deinen Namen an." })
     .trim()
@@ -66,7 +71,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { organisation, orgType, name, email, message, website } =
+  const { organisation, orgType, category, name, email, message, website } =
     parsed.data;
 
   // Honeypot ausgefüllt -> vermutlich Bot: Erfolg vortäuschen, nichts versenden.
@@ -88,20 +93,24 @@ export async function POST(request: NextRequest) {
 
   const resend = new Resend(apiKey);
 
+  const subjectLabel = category ? CATEGORY_LABEL[category] : "Anfrage";
+  const subject = `${subjectLabel} von ${organisation || name}`;
+
+  const bodyLines: string[] = [];
+  if (category) bodyLines.push(`Kategorie: ${CATEGORY_LABEL[category]}`);
+  if (organisation) {
+    bodyLines.push(
+      `Organisation/Einrichtung: ${organisation}${orgType ? ` (${orgType})` : ""}`
+    );
+  }
+  bodyLines.push(`Name: ${name}`, `E-Mail: ${email}`, "", "Nachricht:", message);
+
   const { error } = await resend.emails.send({
     from: "Kreativbrücke Website <hallo@kreativbruecke.org>",
     to: CONTACT_EMAIL,
     replyTo: email,
-    subject: `Anfrage von ${organisation}`,
-    text: [
-      `Organisation/Einrichtung: ${organisation}`,
-      `Art der Einrichtung: ${orgType}`,
-      `Name: ${name}`,
-      `E-Mail: ${email}`,
-      "",
-      "Nachricht:",
-      message,
-    ].join("\n"),
+    subject,
+    text: bodyLines.join("\n"),
   });
 
   if (error) {

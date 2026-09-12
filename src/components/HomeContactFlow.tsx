@@ -2,9 +2,8 @@
 
 import { useState, type FormEvent } from "react";
 
-const CONTACT_EMAIL = "hallo@kreativbruecke.org";
-
 type Category = "kooperation" | "finanziell" | "sonstiges";
+type Status = "idle" | "loading" | "success" | "error";
 
 const CATEGORIES: {
   id: Category;
@@ -36,6 +35,9 @@ const CATEGORY_LABEL: Record<Category, string> = {
 
 const ORG_TYPES = ["Schule", "Verein", "Unternehmen", "Andere"];
 
+const inputClass =
+  "mt-1.5 w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-navy placeholder:text-navy/40 focus:border-clay focus:outline-none focus:ring-2 focus:ring-clay/30";
+
 export default function HomeContactFlow() {
   const [category, setCategory] = useState<Category | null>(null);
   const [name, setName] = useState("");
@@ -43,6 +45,10 @@ export default function HomeContactFlow() {
   const [org, setOrg] = useState("");
   const [orgType, setOrgType] = useState(ORG_TYPES[0]);
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState(""); // Honeypot, bleibt für Menschen leer
+
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   function reset() {
     setCategory(null);
@@ -51,30 +57,51 @@ export default function HomeContactFlow() {
     setOrg("");
     setOrgType(ORG_TYPES[0]);
     setMessage("");
+    setWebsite("");
+    setStatus("idle");
+    setErrorMessage("");
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!category) return;
 
-    const subjectWho = category === "kooperation" ? org || name : name;
-    const subject = `${CATEGORY_LABEL[category]} von ${subjectWho || "Website"}`;
+    setStatus("loading");
+    setErrorMessage("");
 
-    const bodyLines = [message, "", "---", `Kategorie: ${CATEGORY_LABEL[category]}`];
-    if (category === "kooperation") {
-      bodyLines.push(`Organisation: ${org} (${orgType})`);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          category,
+          organisation: category === "kooperation" ? org : undefined,
+          orgType: category === "kooperation" ? orgType : undefined,
+          name,
+          email,
+          message,
+          website,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMessage(
+          data.error ?? "Da ist etwas schiefgelaufen. Bitte versuch es erneut."
+        );
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+    } catch {
+      setErrorMessage(
+        "Da ist etwas schiefgelaufen. Bitte versuch es erneut oder schreib uns direkt an hallo@kreativbruecke.org."
+      );
+      setStatus("error");
     }
-    bodyLines.push(`Name: ${name}`, `E-Mail: ${email}`);
-
-    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
-
-    window.location.href = mailtoUrl;
   }
-
-  const inputClass =
-    "mt-1.5 w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-navy placeholder:text-navy/40 focus:border-clay focus:outline-none focus:ring-2 focus:ring-clay/30";
 
   if (!category) {
     return (
@@ -112,6 +139,26 @@ export default function HomeContactFlow() {
     );
   }
 
+  if (status === "success") {
+    return (
+      <div className="max-w-xl rounded-ceramic bg-white/70 p-6 ring-1 ring-navy/5 sm:p-8">
+        <p className="font-serif-display text-lg font-semibold text-navy">
+          Danke für deine Anfrage!
+        </p>
+        <p className="mt-2 text-sm text-navy/75">
+          Wir melden uns innerhalb weniger Stunden bei dir zurück.
+        </p>
+        <button
+          type="button"
+          onClick={reset}
+          className="mt-4 text-sm font-medium text-navy/60 hover:text-navy"
+        >
+          ← Weitere Anfrage stellen
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-xl rounded-ceramic bg-white/70 p-6 ring-1 ring-navy/5 sm:p-8">
       <button
@@ -126,6 +173,22 @@ export default function HomeContactFlow() {
       </p>
 
       <form onSubmit={handleSubmit} className="mt-5 space-y-4">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+        >
+          <label htmlFor="hcf-website">Website</label>
+          <input
+            id="hcf-website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+        </div>
+
         {category === "kooperation" && (
           <div className="grid gap-4 sm:grid-cols-[1.4fr_1fr]">
             <div>
@@ -199,6 +262,7 @@ export default function HomeContactFlow() {
           <textarea
             id="hcf-message"
             required
+            minLength={10}
             rows={4}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -207,11 +271,16 @@ export default function HomeContactFlow() {
           />
         </div>
 
+        {status === "error" && (
+          <p className="text-sm font-medium text-red-600">{errorMessage}</p>
+        )}
+
         <button
           type="submit"
-          className="w-full rounded-full bg-clay px-6 py-3.5 text-base font-semibold text-cream transition-colors hover:bg-clay-dark sm:w-auto"
+          disabled={status === "loading"}
+          className="w-full rounded-full bg-clay px-6 py-3.5 text-base font-semibold text-cream transition-colors hover:bg-clay-dark disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
-          Nachricht senden
+          {status === "loading" ? "Wird gesendet …" : "Nachricht senden"}
         </button>
       </form>
     </div>
