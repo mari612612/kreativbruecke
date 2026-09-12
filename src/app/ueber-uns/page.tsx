@@ -147,7 +147,7 @@ export default function UeberUns() {
 
       {/* Unser Zweck */}
       <section className="w-full" style={{ backgroundColor: "var(--color-cream)" }}>
-        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
           <Reveal>
             <h2 className="font-serif-display text-2xl font-semibold text-navy sm:text-3xl">
               Unser Zweck
@@ -177,7 +177,7 @@ export default function UeberUns() {
 
       {/* Für wen wir da sind */}
       <section className="w-full">
-        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
           <Reveal>
             <h2 className="font-serif-display text-2xl font-semibold text-navy sm:text-3xl">
               Für wen wir da sind
