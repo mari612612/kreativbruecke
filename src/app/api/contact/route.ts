@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
   const resend = new Resend(apiKey);
 
   const { error } = await resend.emails.send({
-    from: "Kreativbrücke Website <onboarding@resend.dev>",
+    from: "Kreativbrücke Website <hallo@kreativbruecke.org>",
     to: CONTACT_EMAIL,
     replyTo: email,
     subject: `Anfrage von ${organisation}`,
