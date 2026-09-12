@@ -84,7 +84,59 @@ export default function Datenschutz() {
 
         <div>
           <h2 className="font-semibold text-navy">
-            5. Kontaktformular und E-Mail-Kontakt
+            5. Zahlungsdienstleister bei Spenden
+          </h2>
+          <p className="mt-2">
+            Wenn du per Kreditkarte spendest, setzen wir den
+            Zahlungsdienstleister Stripe ein. Anbieter ist Stripe
+            Payments Europe, Limited, 1 Grand Canal Street Lower, Grand
+            Canal Dock, Dublin, D02 H210, Irland („Stripe“). Die dafür
+            erforderlichen Zahlungsdaten (z. B. Kartennummer,
+            Ablaufdatum, Sicherheitscode) werden direkt an Stripe
+            übermittelt und dort verarbeitet; wir selbst erhalten und
+            speichern diese Daten nicht. Die Verarbeitung erfolgt zur
+            Durchführung der von dir veranlassten Zahlung (Art. 6 Abs. 1
+            lit. b DSGVO) sowie zur Betrugsprävention (Art. 6 Abs. 1
+            lit. f DSGVO). Eine Datenübermittlung an die
+            Muttergesellschaft Stripe, Inc. mit Sitz in den USA ist
+            dabei nicht ausgeschlossen und über die
+            EU-Standardvertragsklauseln (Art. 46 DSGVO) abgesichert.
+            Weitere Informationen:{" "}
+            <a
+              href="https://stripe.com/de/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-clay hover:text-clay-dark"
+            >
+              stripe.com/de/privacy
+            </a>
+          </p>
+          <p className="mt-2">
+            Wenn du per PayPal spendest, werden deine Daten an PayPal
+            (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal,
+            L-2449 Luxemburg („PayPal“), übermittelt. Rechtsgrundlage ist
+            ebenfalls die Durchführung der von dir veranlassten Zahlung
+            (Art. 6 Abs. 1 lit. b DSGVO). Weitere Informationen:{" "}
+            <a
+              href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-clay hover:text-clay-dark"
+            >
+              paypal.com/de/webapps/mpp/ua/privacy-full
+            </a>
+          </p>
+          <p className="mt-2">
+            Bei Spenden per Überweisung erhalten wir ausschließlich die
+            von deiner Bank übermittelten Daten (Name, IBAN,
+            Verwendungszweck), die zur Zuordnung deiner Spende
+            verarbeitet werden (Art. 6 Abs. 1 lit. b DSGVO).
+          </p>
+        </div>
+
+        <div>
+          <h2 className="font-semibold text-navy">
+            6. Kontaktformular und E-Mail-Kontakt
           </h2>
           <p className="mt-2">
             Wenn du uns über das Kontaktformular oder per E-Mail
@@ -102,19 +154,22 @@ export default function Datenschutz() {
         </div>
 
         <div>
-          <h2 className="font-semibold text-navy">6. Cookies</h2>
+          <h2 className="font-semibold text-navy">7. Cookies</h2>
           <p className="mt-2">
-            Diese Website verwendet aktuell keine Cookies zu Analyse-
-            oder Marketingzwecken. Sollten künftig Cookies oder
-            vergleichbare Technologien eingesetzt werden, wird diese
-            Datenschutzerklärung entsprechend angepasst und – soweit
-            erforderlich – eine Einwilligung eingeholt.
+            Diese Website verwendet keine Cookies zu Analyse- oder
+            Marketingzwecken. Im Spendenbereich können technisch
+            notwendige Cookies unserer Zahlungsdienstleister PayPal und
+            Stripe gesetzt werden, die zur Abwicklung und Absicherung
+            der von dir veranlassten Zahlung erforderlich sind (Art. 6
+            Abs. 1 lit. b, f DSGVO). Diese werden ausschließlich dann
+            geladen, wenn du den Spendenbereich aufrufst bzw. eine
+            Zahlungsmethode auswählst.
           </p>
         </div>
 
         <div>
           <h2 className="font-semibold text-navy">
-            7. Deine Rechte als betroffene Person
+            8. Deine Rechte als betroffene Person
           </h2>
           <p className="mt-2">
             Du hast im Rahmen der gesetzlichen Vorgaben das Recht auf
@@ -157,7 +212,7 @@ export default function Datenschutz() {
 
         <div>
           <h2 className="font-semibold text-navy">
-            8. Änderung dieser Datenschutzerklärung
+            9. Änderung dieser Datenschutzerklärung
           </h2>
           <p className="mt-2">
             Wir behalten uns vor, diese Datenschutzerklärung anzupassen,
