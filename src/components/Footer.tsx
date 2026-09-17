@@ -41,6 +41,11 @@ export default function Footer() {
                   Kontakt
                 </Link>
               </li>
+              <li>
+                <Link href="/spenden" className="hover:text-cream">
+                  Spenden
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -57,11 +62,6 @@ export default function Footer() {
               <li>
                 <Link href="/datenschutz" className="hover:text-cream">
                   Datenschutzerklärung
-                </Link>
-              </li>
-              <li>
-                <Link href="/spenden" className="hover:text-cream">
-                  Hinweise zu Spenden
                 </Link>
               </li>
               <li>
