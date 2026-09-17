@@ -27,13 +27,13 @@ export default function CopyField({
   }
 
   return (
-    <div className="flex items-center justify-between gap-3 rounded-xl border border-navy/15 bg-white px-4 py-3">
+    <div className="flex min-w-0 flex-col gap-2 rounded-xl border border-navy/15 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
       <div className="min-w-0">
         <p className="text-xs font-medium uppercase tracking-wide text-navy/50">
           {label}
         </p>
         <p
-          className={`mt-0.5 truncate text-navy ${mono ? "font-mono" : ""}`}
+          className={`mt-0.5 break-words text-navy ${mono ? "font-mono text-sm sm:text-base" : ""}`}
         >
           {value}
         </p>
@@ -41,7 +41,7 @@ export default function CopyField({
       <button
         type="button"
         onClick={handleCopy}
-        className="shrink-0 rounded-full bg-clay/10 px-3 py-1.5 text-sm font-semibold text-clay transition-colors hover:bg-clay/20"
+        className="self-start shrink-0 rounded-full bg-clay/10 px-3 py-1.5 text-sm font-semibold text-clay transition-colors hover:bg-clay/20 sm:self-auto"
       >
         {copied ? "Kopiert!" : "Kopieren"}
       </button>

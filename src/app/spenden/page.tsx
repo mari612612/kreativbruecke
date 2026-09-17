@@ -50,7 +50,7 @@ export default async function Spenden() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {/* Einmalig spenden */}
-          <div className="rounded-ceramic bg-white/60 p-6 ring-1 ring-navy/5 sm:p-8">
+          <div className="min-w-0 rounded-ceramic bg-white/60 p-6 ring-1 ring-navy/5 sm:p-8">
             <h2 className="font-serif-display text-2xl font-semibold text-navy">
               Einmalig spenden
             </h2>
@@ -83,7 +83,7 @@ export default async function Spenden() {
                 className="h-28 w-28 shrink-0 sm:h-32 sm:w-32"
                 dangerouslySetInnerHTML={{ __html: girocodeSvg }}
               />
-              <p className="text-sm leading-relaxed text-navy/75">
+              <p className="min-w-0 text-sm leading-relaxed text-navy/75">
                 Mit der Banking-App scannen (Girocode) – Kontodaten werden
                 automatisch übernommen, den Betrag trägst du selbst ein.
               </p>
@@ -91,7 +91,7 @@ export default async function Spenden() {
           </div>
 
           {/* Dauerhaft spenden */}
-          <div className="rounded-ceramic-alt bg-white/60 p-6 ring-1 ring-navy/5 sm:p-8">
+          <div className="min-w-0 rounded-ceramic-alt bg-white/60 p-6 ring-1 ring-navy/5 sm:p-8">
             <h2 className="font-serif-display text-2xl font-semibold text-navy">
               Dauerhaft spenden
             </h2>
