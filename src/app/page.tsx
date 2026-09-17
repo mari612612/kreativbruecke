@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import HomeContactFlow from "@/components/HomeContactFlow";
+import MobileDonateBar from "@/components/MobileDonateBar";
 import Reveal from "@/components/Reveal";
 import RotatingWord from "@/components/RotatingWord";
 import { AUDIENCES } from "@/data/audiences";
@@ -52,6 +54,17 @@ export default function Home() {
             Ob am Anfang oder mit Erfahrung: Bei uns ist jede und jeder
             willkommen.
           </p>
+          <div
+            className="animate-fade-up mt-8"
+            style={{ animationDelay: "340ms" }}
+          >
+            <Link
+              href="/spenden"
+              className="inline-block rounded-full bg-clay px-8 py-4 text-base font-semibold text-cream shadow-sm transition-colors hover:bg-clay-dark"
+            >
+              Jetzt spenden
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -139,13 +152,15 @@ export default function Home() {
       </section>
 
       {/* Wie möchtest du mitwirken? */}
-      <section className="py-20">
+      <section className="py-20 pb-28 sm:pb-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal>
             <HomeContactFlow />
           </Reveal>
         </div>
       </section>
+
+      <MobileDonateBar />
     </>
   );
 }

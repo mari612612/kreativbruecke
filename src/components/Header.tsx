@@ -51,19 +51,12 @@ export default function Header() {
               </Link>
             );
           })}
-          <div className="relative ml-2">
-            <button
-              type="button"
-              disabled
-              title="Direktspenden sind bald möglich"
-              className="cursor-not-allowed rounded-full bg-clay/40 px-5 py-2 text-sm font-semibold text-cream/70"
-            >
-              Spenden
-            </button>
-            <span className="absolute left-1/2 top-full mt-1 w-max -translate-x-1/2 text-[11px] font-medium text-navy/60">
-              Direktspenden bald möglich
-            </span>
-          </div>
+          <Link
+            href="/spenden"
+            className="ml-2 rounded-full bg-clay px-5 py-2 text-sm font-semibold text-cream transition-colors hover:bg-clay-dark"
+          >
+            Spenden
+          </Link>
         </nav>
 
         <button
@@ -112,16 +105,13 @@ export default function Header() {
               </li>
             ))}
             <li className="pt-1">
-              <button
-                type="button"
-                disabled
-                className="block w-full cursor-not-allowed rounded-xl bg-clay/40 px-4 py-3 text-center font-semibold text-cream/70"
+              <Link
+                href="/spenden"
+                onClick={() => setOpen(false)}
+                className="block w-full rounded-xl bg-clay px-4 py-3 text-center font-semibold text-cream transition-colors hover:bg-clay-dark"
               >
                 Spenden
-              </button>
-              <p className="mt-1.5 text-center text-xs font-medium text-navy/60">
-                Direktspenden bald möglich
-              </p>
+              </Link>
             </li>
           </ul>
         </nav>

@@ -147,6 +147,18 @@ export default function Datenschutz() {
             hierfür ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO.
           </p>
           <p className="mt-2">
+            Hinterlässt du uns auf der Seite{" "}
+            <a href="/spenden" className="text-clay hover:text-clay-dark">
+              „Spenden“
+            </a>{" "}
+            freiwillig deine Daten für eine spätere Spendenbescheinigung
+            (Name, Anschrift, optional E-Mail-Adresse), verarbeiten wir
+            diese ausschließlich zum Zweck der Ausstellung einer
+            Zuwendungsbestätigung (Art. 6 Abs. 1 lit. b DSGVO). Der
+            Versand erfolgt technisch auf demselben Weg wie beim
+            Kontaktformular, siehe unten.
+          </p>
+          <p className="mt-2">
             Für den Versand der Formulardaten per E-Mail nutzen wir den
             Dienst Resend (Plus Five Five, Inc., 2261 Market Street
             #5039, San Francisco, CA 94114, USA). Deine Angaben werden
