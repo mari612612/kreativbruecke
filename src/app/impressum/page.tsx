@@ -71,25 +71,6 @@ export default function Impressum() {
 
         <div>
           <h2 className="font-semibold text-navy">
-            Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
-          </h2>
-          <p className="mt-2">
-            [Name, Anschrift der verantwortlichen Person]
-          </p>
-        </div>
-
-        <div>
-          <h2 className="font-semibold text-navy">
-            Umsatzsteuer-Identifikationsnummer
-          </h2>
-          <p className="mt-2">
-            Sofern vorhanden, Umsatzsteuer-Identifikationsnummer gemäß
-            § 27 a Umsatzsteuergesetz: [USt-IdNr., falls vorhanden]
-          </p>
-        </div>
-
-        <div>
-          <h2 className="font-semibold text-navy">
             Streitschlichtung
           </h2>
           <p className="mt-2">
