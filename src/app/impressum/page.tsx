@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum von Kreativbrücke e.V. gemäß § 5 TMG.",
+  description: "Impressum von Kreativbrücke e.V. gemäß § 5 DDG.",
 };
 
 export default function Impressum() {
@@ -12,16 +12,10 @@ export default function Impressum() {
         Impressum
       </h1>
 
-      <div className="mt-6 rounded-xl bg-clay/10 px-5 py-4 text-sm text-clay">
-        Hinweis: Diese Seite enthält Platzhalter (in eckigen Klammern).
-        Bitte vor Veröffentlichung durch die tatsächlichen Vereinsdaten
-        ersetzen.
-      </div>
-
       <div className="mt-10 space-y-8 text-navy/85 leading-relaxed">
         <div>
           <h2 className="font-semibold text-navy">
-            Angaben gemäß § 5 TMG
+            Angaben gemäß § 5 DDG
           </h2>
           <p className="mt-2">
             Kreativbrücke e.V.
@@ -79,12 +73,7 @@ export default function Impressum() {
             Streitschlichtung
           </h2>
           <p className="mt-2">
-            Die Europäische Kommission stellt eine Plattform zur
-            Online-Streitbeilegung (OS) bereit:{" "}
-            <span className="break-all">
-              https://ec.europa.eu/consumers/odr/
-            </span>
-            . Wir sind nicht bereit oder verpflichtet, an
+            Wir sind nicht bereit oder verpflichtet, an
             Streitbeilegungsverfahren vor einer
             Verbraucherschlichtungsstelle teilzunehmen.
           </p>
