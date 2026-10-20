@@ -55,6 +55,11 @@ export default function Impressum() {
         </div>
 
         <div>
+          <h2 className="font-semibold text-navy">Steuernummer</h2>
+          <p className="mt-2">215/5870/3198</p>
+        </div>
+
+        <div>
           <h2 className="font-semibold text-navy">Kontakt</h2>
           <p className="mt-2">
             Telefon: 0176 61327276
