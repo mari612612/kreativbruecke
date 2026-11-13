@@ -6,11 +6,12 @@ import SpendenbescheinigungForm from "@/components/SpendenbescheinigungForm";
 import {
   DONATION_ACCOUNT,
   MONTHLY_SUGGESTIONS,
+  STRIPE_DONATION_URL,
   buildGirocodePayload,
 } from "@/lib/donation";
 
 export const metadata: Metadata = {
-  title: "Spenden",
+  title: "Weitere Spendenwege",
   description:
     "Unterstütze Kreativbrücke e.V. per Überweisung oder Dauerauftrag – Bankverbindung, Girocode zum Scannen und Hinweise zur Spendenbescheinigung.",
 };
@@ -29,7 +30,7 @@ async function getGirocodeSvg() {
   );
 }
 
-export default async function Spenden() {
+export default async function WeitereSpendenwege() {
   const girocodeSvg = await getGirocodeSvg();
 
   return (
@@ -39,20 +40,26 @@ export default async function Spenden() {
           Spenden
         </p>
         <h1 className="mt-3 font-serif-display text-4xl font-semibold text-navy sm:text-5xl">
-          Unterstütze Kreativbrücke e.V.
+          Weitere Spendenwege
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy/80">
-          Direktspenden per Kreditkarte oder PayPal folgen, sobald unsere
-          Steuernummer vorliegt. Bis dahin freuen wir uns über deine
-          Unterstützung per Überweisung oder Dauerauftrag – ganz klassisch mit
-          den Kontodaten unten.
+          Am schnellsten spendest du online per Karte, Apple Pay oder Google
+          Pay – den Betrag wählst du selbst. Lieber klassisch? Dann unterstütze
+          uns per Überweisung oder regelmäßig per Dauerauftrag mit den
+          Kontodaten unten.
         </p>
+        <a
+          href={STRIPE_DONATION_URL}
+          className="mt-8 inline-block rounded-full bg-clay px-8 py-4 text-base font-semibold text-cream shadow-sm transition-colors hover:bg-clay-dark"
+        >
+          Jetzt online spenden
+        </a>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {/* Einmalig spenden */}
           <div className="min-w-0 rounded-ceramic bg-white/60 p-6 ring-1 ring-navy/5 sm:p-8">
             <h2 className="font-serif-display text-2xl font-semibold text-navy">
-              Einmalig spenden
+              Per Überweisung
             </h2>
             <p className="mt-2 text-sm text-navy/75">
               Per Überweisung oder direkt mit deiner Banking-App scannen.
