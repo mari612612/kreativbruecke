@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { STRIPE_DONATION_URL } from "@/lib/donation";
 
 export default function Footer() {
   return (
@@ -42,8 +43,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/spenden" className="hover:text-cream">
+                <a href={STRIPE_DONATION_URL} className="hover:text-cream">
                   Spenden
+                </a>
+              </li>
+              <li>
+                <Link href="/spenden/weitere-wege" className="hover:text-cream">
+                  Weitere Spendenwege
                 </Link>
               </li>
             </ul>

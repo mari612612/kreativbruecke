@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import HomeContactFlow from "@/components/HomeContactFlow";
 import MobileDonateBar from "@/components/MobileDonateBar";
 import Reveal from "@/components/Reveal";
 import RotatingWord from "@/components/RotatingWord";
 import { AUDIENCES } from "@/data/audiences";
+import { STRIPE_DONATION_URL } from "@/lib/donation";
 
 const AUDIENCE_WORDS = AUDIENCES.map((a) => a.short);
 
@@ -58,12 +58,12 @@ export default function Home() {
             className="animate-fade-up mt-8"
             style={{ animationDelay: "340ms" }}
           >
-            <Link
-              href="/spenden"
+            <a
+              href={STRIPE_DONATION_URL}
               className="inline-block rounded-full bg-clay px-8 py-4 text-base font-semibold text-cream shadow-sm transition-colors hover:bg-clay-dark"
             >
               Jetzt spenden
-            </Link>
+            </a>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { STRIPE_DONATION_URL } from "@/lib/donation";
 
 const NAV_LINKS = [
   { href: "/", label: "Startseite" },
@@ -51,12 +52,12 @@ export default function Header() {
               </Link>
             );
           })}
-          <Link
-            href="/spenden"
+          <a
+            href={STRIPE_DONATION_URL}
             className="ml-2 rounded-full bg-clay px-5 py-2 text-sm font-semibold text-cream transition-colors hover:bg-clay-dark"
           >
             Spenden
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -105,13 +106,13 @@ export default function Header() {
               </li>
             ))}
             <li className="pt-1">
-              <Link
-                href="/spenden"
+              <a
+                href={STRIPE_DONATION_URL}
                 onClick={() => setOpen(false)}
                 className="block w-full rounded-xl bg-clay px-4 py-3 text-center font-semibold text-cream transition-colors hover:bg-clay-dark"
               >
                 Spenden
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>

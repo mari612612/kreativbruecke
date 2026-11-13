@@ -5,6 +5,10 @@ export const DONATION_ACCOUNT = {
   bic: "FNOMDEB2",
 } as const;
 
+/** Stripe-Zahlungslink: einmalige Spende mit frei wählbarem Betrag. */
+export const STRIPE_DONATION_URL =
+  "https://donate.stripe.com/7sY5kFfaz5oU1SG2IW6J200";
+
 export const MONTHLY_SUGGESTIONS = [
   {
     amount: "10 €",

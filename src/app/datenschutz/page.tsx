@@ -148,8 +148,8 @@ export default function Datenschutz() {
           </p>
           <p className="mt-2">
             Hinterlässt du uns auf der Seite{" "}
-            <a href="/spenden" className="text-clay hover:text-clay-dark">
-              „Spenden“
+            <a href="/spenden/weitere-wege" className="text-clay hover:text-clay-dark">
+              „Weitere Spendenwege“
             </a>{" "}
             freiwillig deine Daten für eine spätere Spendenbescheinigung
             (Name, Anschrift, optional E-Mail-Adresse), verarbeiten wir
